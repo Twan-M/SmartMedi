@@ -35,7 +35,8 @@ How To Use FileZilla (FileZilla Documentation): https://wiki.filezilla-project.o
 
 ![IMG_3597](https://github.com/user-attachments/assets/55142d51-ac1e-4f65-8e90-741038316b48)
 
-> **Common Issue:** If the matrix does not display, ensure that the FastLED library is installed in de lib_deps and the correct GPIO pin is used.
+> **Common Issue:** If the matrix does not display, ensure that the FastLED library is installed in de lib_deps and the correct GPIO pin is used.  
+> **Checkpoint:** Verify that the LED matrix is powered on and FastLED is able to control it by lighting up a few LEDs as a test.
 
 **Connect to WIFI:**
 
@@ -53,6 +54,7 @@ void connectToWiFi() {
   Serial.println(" Connected to Wi-Fi");
 }
 ```
+> **Common Issue:** Double check your cridentials of your wifi network and try again.  
 > **Checkpoint:** Print the Wi-Fi connection status to the Serial Monitor to ensure the ESP32 connects successfully. You should see the "Connected to Wi-Fi" message.
 
 ## Step 2: Connecting to the Webserver, Database and API
@@ -124,7 +126,7 @@ void fetchReminders() {
 > **Checkpoint:** Print the API response to the Serial Monitor to ensure the ESP32 can successfully fetch and parse the reminders.  
 > **Common Issue:** If the API call fails, check the server URL and/or ensure the device is connected to Wi-Fi.
 
-** Displaying the notification: **
+**Displaying the notification:**
 
 - Based on the reminders fetched, display a visual reminder using the LED matrix.
 - This kind of matrix doen't have a driver so it is seen as a long LED-strip therefore this code to let a red cross blink:
@@ -204,7 +206,8 @@ void displayExclamationMark() {
   leds[52] = CRGB::Red;
 }
 ```
-> **Common Issue:** If the LEDs don't blink, verify that the LED array is correctly initialized and the display function is called at the right moment. Also check if the right pins are connected as described in step 1
+> **Common Issue:** If the LEDs don't blink, verify that the LED array is correctly initialized and the display function is called at the right moment. Also check if the right pins are connected as described in step 1  
+> **Checkpoint:** Confirm the LED matrix displays the exclamation mark or any other symbol when a reminder is triggered.
 
 ## Step 4: Website interface for adding the reminders
 
@@ -229,7 +232,7 @@ void displayExclamationMark() {
 </form>
 ```
 
-> **Common Issue:** If the form does not submit, check that the `action` attribute points to the correct PHP script.
+> **Common Issue:** If the form does not submit, check that the `action` attribute points to the correct PHP script.  
 
 **Handle form submission:**
 
@@ -251,6 +254,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 ```
 > **Common Issue:** If the reminder does not get saved, verify the database schema matches the query.
+> **Checkpoint:** After submitting a new reminder, ensure that the data is stored in the database and can be retrieved via the API. e.g. Check the database contents and entries with Datagrip
+
 
 ### Troubleshooting:
 
