@@ -15,9 +15,10 @@ Combined this project will count pills placed in a box, and updats the web-inter
 1. Connect your ESP32 to your PC using the USB-C Port.
 2. Connect your load cell  to the ESP using the following diagram:
 ![image](https://github.com/user-attachments/assets/d2c917f5-343f-4880-8149-d2c1c5cf5da9)
-3. Add your Load Cell to the Load Cell Mount.
+**Checkpoint** Make sure once again it's connected the same way as the diagram
+4. Add your Load Cell to the Load Cell Mount.
 ![image](https://github.com/user-attachments/assets/f462be49-6e95-46e3-95ef-217db131338e)
-(From top  to bottom; Weight Plate -> Spacer -> Load Cell -> Bottom feet
+**Checkpoint** Make sure if using the included 3MF files, it looks like the screenshot above. From top  to bottom; Weight Plate -> Spacer -> Load Cell -> Bottom feet
 
 ## Part 1: Installing the Software
 1. Install VScode "https://code.visualstudio.com/"
@@ -34,6 +35,9 @@ Combined this project will count pills placed in a box, and updats the web-inter
 8. Select your ESP Device (In our case it's the; Espressif ESP32 Dev Module)
 9. Click on "Finish" to create your project.
 ![image](https://github.com/user-attachments/assets/a5c1d99c-6e9f-4247-a1c0-84bc7efee2db)
+**Checkpoint** If you've done it correctly it should open the plaformio.ini file, and the workspace folder will open on the left.
+![image](https://github.com/user-attachments/assets/e908a937-b2fb-4895-91e8-23937994200d)
+
 
 ## Part 2: Calibrating the Load Cell
 1. Copy the code in the file named: "Calibration.cpp" to start calibrating your Load Cell
@@ -54,6 +58,7 @@ Combined this project will count pills placed in a box, and updats the web-inter
 ![image](https://github.com/user-attachments/assets/cc0adb93-bf7d-43d6-b9e3-aa67a3af29fd)
 13. Repeat those steps, until the measured value is the same as your known item weight. (A difference of 0.1-0.3 gram is fine)
 14. You now have the correct calibration factor for your Load Cell. Write this down somewhere aswell, you'll need this factor later.
+**Checkpoint** You've completed this part, if you've written down the calibration factor, which gives readings back not more than 0.3g apart from the actual weight of the item
 
 ## Part 3: The project code
 1. Copy the code of the file named: "main.cpp" instead of the current calibration code.
@@ -68,6 +73,7 @@ Combined this project will count pills placed in a box, and updats the web-inter
 6. Flash the current code to your ESP using the same steps as previous.
 7. Open the serial monitor once again, it'll show you instructions. Place a pill on the Load Cell once the offset has been given.
 8. The Serial monitor will show you how many pills are on the Load Cell. (If not check the troubleshooting steps below)
+**Checkpoint** Your project is finished once it shows the correct amount of pills you've placed on the load cell in the Serial Monitor.
 
 ## Part 4: Troubleshooting
 1. Is flashing your ESP giving an error? Make sure the correct COM port is selected.
@@ -78,6 +84,7 @@ Combined this project will count pills placed in a box, and updats the web-inter
 4. Does your computer not recognize your ESP? Try downloading the drivers manually: "https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/establish-serial-connection.html"
 5. Is your ESP not updating the user web interface? Make sure your ESP is connected to the WiFi.
 6. Is your ESP not connecting to WiFi? Make sure your WiFi has a 2.4GHz band, or make sure you enable "Maximise Compatibiliy" for your Hotspot
+7. Are the amount of pills now showing correctly? Make sure you've set your pill_weight variable. Make sure you've set your calibration_factor. If this still isn't working, try a heavier pill, or redo the calibration steps.
 
 
 
