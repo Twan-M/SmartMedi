@@ -35,7 +35,7 @@ Combined this project will count pills placed in a box, and updats the web-inter
 9. Click on "Finish" to create your project.
 ![image](https://github.com/user-attachments/assets/a5c1d99c-6e9f-4247-a1c0-84bc7efee2db)
 
-##Part 2: Calibrating the Load Cell
+## Part 2: Calibrating the Load Cell
 1. Copy the code in the file named: "Calibration.cpp" to start calibrating your Load Cell
 2. Click the PlatformIO icon to navigate to the Homepage once again.
 3. Click the Liberaries icon in the PlatformIO menu.
@@ -55,7 +55,7 @@ Combined this project will count pills placed in a box, and updats the web-inter
 13. Repeat those steps, until the measured value is the same as your known item weight. (A difference of 0.1-0.3 gram is fine)
 14. You now have the correct calibration factor for your Load Cell. Write this down somewhere aswell, you'll need this factor later.
 
-##Part 3: The project code
+## Part 3: The project code
 1. Copy the code of the file named: "main.cpp" instead of the current calibration code.
 2. Replace the WiFi connection details with the details of your own WiFi network or Hotspot. (If the ESP is not connecting to WiFi, visit the troubleshooting steps below)
 ![image](https://github.com/user-attachments/assets/6a8c379b-4d7e-4ea6-8f2e-5e158b8015d1)
@@ -69,7 +69,7 @@ Combined this project will count pills placed in a box, and updats the web-inter
 7. Open the serial monitor once again, it'll show you instructions. Place a pill on the Load Cell once the offset has been given.
 8. The Serial monitor will show you how many pills are on the Load Cell. (If not check the troubleshooting steps below)
 
-##Part 4: Troubleshooting
+## Part 4: Troubleshooting
 1. Is flashing your ESP giving an error? Make sure the correct COM port is selected.
 ![image](https://github.com/user-attachments/assets/0a40029c-f7c8-4406-a0b7-55e9b7f08a55)
 2. Is the Load cell giving readingings back which are fluctuating a lot, make sure the load cell is connected the same as the diagram, and make sure your solder points are good. 
